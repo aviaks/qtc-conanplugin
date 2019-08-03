@@ -21,18 +21,26 @@ matrix:
     env: QTC_VERSION="4.7.0" ARCH="x64"
   - os: linux
     env: QTC_VERSION="4.8.0" ARCH="x64"
+  - os: linux
+    env: QTC_VERSION="4.9.0" ARCH="x64"
   - os: osx
     env: QTC_VERSION="4.7.0" ARCH="x64"
   - os: osx
     env: QTC_VERSION="4.8.0" ARCH="x64"
+  - os: osx
+    env: QTC_VERSION="4.9.0" ARCH="x64"
   - os: windows
     env: QTC_VERSION="4.7.0" ARCH="x86"
   - os: windows
     env: QTC_VERSION="4.8.0" ARCH="x86"
   - os: windows
+    env: QTC_VERSION="4.9.0" ARCH="x86"
+  - os: windows
     env: QTC_VERSION="4.7.0" ARCH="x64"
   - os: windows
     env: QTC_VERSION="4.8.0" ARCH="x64"
+  - os: windows
+    env: QTC_VERSION="4.9.0" ARCH="x64"
 
 # for some reason qt-creator packages is archives as 7z archives for all operation systems,
 # so we need p7zip for macOS and Ubnuntu
@@ -46,7 +54,7 @@ addons:
     - p7zip
 
 install:
-  - ./util/prepare.sh
+  - sudo ./util/prepare.sh
 
 script:
   - ./util/build.sh
@@ -55,7 +63,7 @@ script:
 deploy:
   provider: releases
   api_key:
-    secure: iDUZgmKovuUgyP5ZRHpuRDVpYKtrK2+QCTk9+gddhDHRcfju939ACJDiyTBmYfJPl3lfW//BCc9DXz7TDtHv0J+ekwUiTxkP4Rh4+PVbTDMFxAP/Rkv79FguYVX+hyB+Y6d0KDbjhKb3qL0bbsfPVm5uJJXqkeVHhSLv6mpbE9PpxQYOqgzF3fvy9Zev9e3POAKKwm2pJBazVR2tbs5UFx3ZR0E6PDltZLauNGQ+wrINBOKKm2fPkx3v37aWJq+zqSji5lNcyzWsritx3FaE9PsEDgSgYBgMmXw3yJZkzxoihogVoCn9483mLbLe8R07AbKILRTBnyUu0ZK0AsRDOnWyi1waKnPO4FY+sZvt+/3VQvRJBC8ByEP4QYw2RaHqqKNKH8lyu0sS8VFrsoUxfXXlRH6H9ZCO1b2LdZppq2TwMoFkUuqDzgMQIz9m1pAlSu3ApjsWPYxyQTGSmWR7JjvSGOlx/b0Gp6zSNreD4t//PwoDU+Tf0CzeDGoA6SBmGHsNCGHlBlA42lwnp9mc3tRSv8VCEz927Z0TXthbfxNQD60zjodPTbxBM5L8B0i0D+hAKtGhXjX9kpK/E/G+9DHnot5dYC5MhOE9o6gxppasbRSsdUTjAwKLR0l+JNoHWf4IHSd018sSqMbymJPz4rLxIyL+v5g032O7fTYW+5U=
+    secure: fLwNM384pYNkb5Bdd/y412GY2CwkKTfYU0+grEhFkug3lINOQY+z3GpS0QQLMZMQxfOMnSqIEkb2Z2CO70RmZz4UXKhcYZzu5OXmx6NX62OTBEqAjYRFxtYeOhNIwcVjKTyGOclypA13AsJW4MIXIkYge7dBDufD+zks1g1M8tE2XW5caKxSOWpXiV9VyeA3ihXW5FPF0veBbxf7umGIswfX8pV1Os1JJpzZwXW8dAfXnQU88KH7OOfRWf2Ddwd58+Nfwihr4uzre8vdcFEjVUXysR2zC2suv6YCm8kA1NrLi9YujtXO2zRn5EUaqnwY9xS7COYFSWPgb8vtBsrcRPCYXixVu3GHdfVthWQwjozjhOMM454ImJ0m0tvfAhSHZNDAjeDy8yV6NOcARELfmSJC3yJxJ3GZ/WRNmdl4lb4b6vOOJZXzpV5cftvTHK50uxX8Qa5TVv0y6/meoX9JEq2zPcMgVvvRxJj6p/jRWYlo8fX66mCZcKo1Unydh5b1JcDho3sGmdKa7W3FqYFwpc93FbtUDJO/G7jD6f+SaQrA43pxLRpK4tVDZheaeA0YfRUnuR25LataSrMiGY9X4sJnwuO+u2SPHh7DQjKLO8tZhquOcvpApQZfCbPfIGm4FZqBPJlFsSs6uPgyCn8y2Ut3qPha0vQr1oYTJWLTwr4=
   on:
     branch: master
     tags: true

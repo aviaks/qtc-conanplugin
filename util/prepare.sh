@@ -48,6 +48,7 @@ if [ ! -d "qtcreator" ]; then
 
     wget -cq http://download.qt.io/official_releases/qtcreator/$QTC_VERSION_SHORT/$QTC_VERSION/installer_source/$SUBFOLDER/qtcreator.7z -O download/qtcreator.7z
     if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        brew install p7zip
         7z x download/qtcreator.7z -oqtcreator/bin > /dev/null
     else
         7z x download/qtcreator.7z -oqtcreator > /dev/null
